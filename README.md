@@ -40,12 +40,14 @@ The system includes the following main features:
 <pre>
 ├── app.py                       # Flask backend server
 ├── detector.py                  # YOLOv11 object detection logic
-├── downloadBaseModel.py         # Script to download YOLOv11n base model
-├── downloadCustomModel.py       # Script to download the custom-trained model
+├── render.yaml                  # Script to deploy on Render
 ├── requirements.txt             # Required Python dependencies
 ├── models/
-│   ├── 2_best.pt                # Custom-trained YOLOv11m model (final version)
-│   └── yolov11n.pt               # Base YOLOv11n model (from Ultralytics)
+│   ├── Nano_Model/
+│       ├── 1_nano.pt            # Base YOLOv11n model (from Ultralytics)
+│       ├── 2_nano.pt            # Base YOLOv11n model (from Ultralytics - Better)
+│   ├── 1_best.pt                 # Custom-trained YOLOv11m model (final version) 
+│   ├── 2_best.pt                # Custom-trained YOLOv11m model (final version - Better) 
 ├── static/
 │   ├── annotated_frames/        # YOLO-annotated output images
 │   ├── css/
@@ -72,15 +74,12 @@ The system includes the following main features:
 3. 📦 Install dependencies:  
    `pip install -r requirements.txt`
 
-4. ⬇️ Download the trained model files:  
-   `python downloadCustomModel.py`
-
-5. 🛠️ Run the Flask app:  
+4. 🛠️ Run the Flask app:  
    `python app.py`
 
-6. 🌐 Open your browser:  
+5. 🌐 Open your browser:  
    Visit `http://127.0.0.1:5000`
-
+#The server currently runs on local host only.
 ---
 
 ## 📸 Live-Webcam Detection Mode (Not yet implemented)
@@ -89,7 +88,9 @@ To run real-time webcam-based detection using the YOLOv11n model:
 - Launch the webcam script (if separate), or
 - Select “Live Detection” from the interface if enabled.
   
-> 🔧 **Planned Feature:** Real-time drone detection using live webcam input (to be added in future versions).
+> 🔧 **Planned Feature:**
+- Real-time drone detection using live webcam input (to be added in future versions).
+- Planned deployment on platforms like Render or Replit to enable public access and real-time online testing.
 
 ---
 
