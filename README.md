@@ -1,4 +1,4 @@
-# 🛰️ Drone Vision System for Autonomous Aerial Surveillance
+# 🛰️ AI-Driven Real-Time Drone Detection and Monitoring via Web Interface
 
 This project is a Flask-based web application designed to detect drones in uploaded videos, images, and live webcam streams using custom-trained YOLOv11 models. Users can upload footage or access the real-time detection mode, after which the app automatically extracts frames, performs drone detection, and visually annotates the results through a responsive dashboard interface.
 
