@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drone Surveillance System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <h1>DRONE SURVEILLANCE SYSTEM</h1>
+  </header>
+
+  <main class="main-wrapper">
+    <section class="upload-preview-wrapper">
+      
+      <!-- Upload Box -->
+      <div class="upload-box">
+        <label for="mediaInput" class="upload-label">
+          <i class="fas fa-cloud-upload-alt upload-icon"></i>
+          <span class="upload-title">UPLOAD VIDEO / PHOTO</span>
+          <span class="upload-info">Allowed: MP4, AVI, MOV, MKV, WEBM, JPG, JPEG, PNG, WEBP · Max size: 100MB</span>
+          <input type="file" id="mediaInput" accept="video/*,image/*" hidden />
+        </label>
+      </div>
+
+      <!-- Video or Image Preview -->
+      <div class="video-preview-box">
+        <video id="videoPlayer" controls hidden></video>
+        <img id="uploadedImage" alt="Uploaded Image" hidden />
+        <p id="errorDisplay"></p>
+      </div>
+    </section>
+
+    <!-- Filename display -->
+    <section style="text-align: center; margin-bottom: 2rem;">
+      <p id="fileNameDisplay"></p>
+      <p id="detectionSummary" style="margin-top: 6px; font-size: 14px; color: #00ff99;"></p>
+    </section>
+
+    <!-- Progress -->
+    <section id="statusSection" style="text-align: center; margin: 2rem 0; display: none;">
+      <div id="statusMessage">Processing...</div>
+      <progress id="progressBar" value="0" max="100"></progress>
+    </section>
+
+    <!-- Extracted Frames -->
+    <section class="frames-section" style="display: none;" id="extractedSection">
+      <h2 id="sectionTitle">EXTRACTED FRAMES</h2>
+      <div id="framesContainer" class="frames-container"></div>
+    </section>
+
+    <!-- Annotated Frames -->
+    <section class="frames-section" style="display: none;" id="annotatedSection">
+      <h2 id="annotatedSectionTitle">DETECTED DRONES</h2>
+      <div id="annotatedContainer" class="frames-container"></div>
+    </section>
+  </main>
+
+  <img id="zoomPreview" class="image-zoom-preview" />
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
