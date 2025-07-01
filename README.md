@@ -45,7 +45,7 @@ The system includes the following main features:
 ├── requirements.txt             # Required Python dependencies
 ├── models/
 │   ├── 2_best.pt                # Custom-trained YOLOv11m model (final version)
-│   └── yolov8n.pt               # Base YOLOv11n model (from Ultralytics)
+│   └── yolov11n.pt               # Base YOLOv11n model (from Ultralytics)
 ├── static/
 │   ├── annotated_frames/        # YOLO-annotated output images
 │   ├── css/
